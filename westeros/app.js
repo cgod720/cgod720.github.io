@@ -1,13 +1,15 @@
 $(() => {
+  // const $getHouse = (event) => {
+  //   const $house = $(event.currentTarget).attr('id');
+  // }
 
-  $('.targ').on('click', (event) => {
-    console.log("here");
+  $('button').on('click', (event) => {
+    // console.log("here");
     event.preventDefault();
-    const $number = $('#input').val();
-
+    const $id = $(event.currentTarget).attr('id');
     $.ajax(
       {
-        url: "https://anapioficeandfire.com/api/houses/378",
+        url: "https://anapioficeandfire.com/api/houses/" + $id,
         type: "GET",
         // data: {
         //   "$limit" : $number
@@ -16,7 +18,7 @@ $(() => {
     }).then(
       (data) => {
           console.log(data);
-          for(i = 0; i < 20; i++){
+          for(i = 0; i < 10; i++){
             const $div = $('<div>').html(data.swornMembers[i])
             $('#swornMembers').append($div)
           }
