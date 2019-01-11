@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<https://www.anapioficeandfire.com/api/characters?page=2&pageSize=10>
+<https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10>
+<https://www.anapioficeandfire.com/api/characters?page=214&pageSize=10>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -7,24 +10,31 @@
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
       <script src="app.js" charset="utf-8"></script>
-      <link rel"stylesheet" href="style.css">
+      <link href="app.css" rel="stylesheet">
     <title>Westeros</title>
   </head>
   <body>
     <h1>Great Houses of Westeros</h1>
-    <button class="targ" id="378">House Targaryen</button>
-    <button class="bar" id="16">House Baratheon</button>
-    <button class="lann" id="lann">House Lannister</button>
-    <button class="stark" id="362">House Stark</button>
-    <input type="submit" value="House Tyrell" class="tyr" id="tyr">
-    <input type="submit" value="House Greyjoy" class="grey" id="grey">
-    <input type="submit" value="House Martell" class="mart" id="mart">
-    <input type="submit" value="House Arryn" class="arryn" id="arryn">
-    <input type="submit" value="House Tully" class="tully" id="tully">
-    <input type="submit" value="House Bolton" class="bolt" id="bolt">
-    <input type="submit" value="House Frey" class="frey" id="frey">
+    <nav class="wrapper">
+    <button class="house" id="378">Targaryen</button>
+    <button class="house" id="16">Baratheon</button>
+    <button class="house" id="229">Lannister</button>
+    <button class="house" id="362">Stark</button>
+    <button class="house" id="398">Tyrell</button>
+    <button class="house" id="169">Greyjoy</button>
+    <button class="house" id="7">Arryn</button>
+    <button class="house" id="395">Tully</button>
+    <button class="house" id="34">Bolton</button>
+    <button class="house" id="142">Frey</button>
+    </nav>
     <div>
-      <ul id="swornMembers"></ul>
+      <div id="of" class="lord-of"></div>
+      <div id="lord" class="lord-of"></div>
+
+      <div id="swornMembers" class="container">
+        <div class="modal"></div>
+      </div>
+
     </div>
 
   </body>
