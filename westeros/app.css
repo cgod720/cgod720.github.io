@@ -6,7 +6,7 @@ body {
 
 button {
   /* display: inline-block; */
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   height: 50px;
   width: 100px;
@@ -42,7 +42,6 @@ footer {
   text-align: center;
 }
 
-
 a {
   text-decoration: none;
   color: gold;
@@ -50,6 +49,12 @@ a {
   font-size: 16px;
   padding: 10px;
   font-weight: bold;
+  margin-right: 30px;
+}
+
+img {
+  width: 100%;
+  height: 83%;
 }
 
 .container {
@@ -68,7 +73,6 @@ a {
   width: 75%;
   margin: 0 auto;
   text-align: center;
-  background-color: gold;
   position: relative;
   justify-content: center;
 }
@@ -80,29 +84,52 @@ a {
   color: gold;
   font-weight: bold;
   margin: 20px;
+  margin-top: 50px;
 }
 
 .modal {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   color: rgba(255, 180, 30, 0.5);
   z-index: 1;
-  background-color: white;
+  background-color: grey;
   display: none;
-  /* box-shadow:  */
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  margin: 0 auto;
 }
 
 .member {
   width: 100px;
   height: 50px;
   margin: 0 auto;
-  background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HPOKFbR/animated-old-parchment-paper-background-stop-motion_rnbcvf7y__F0000.png");
+  background: url("https://cdn.pixabay.com/photo/2018/03/14/08/56/paper-3224651__340.jpg");
   font-family: fantasy;
   font-size: 14px;
-  color: white;
+  font-weight: bold;
+  color: black;
 }
 .member:hover {
   border-color: darkred;
   background: url("");
-  background-color: black;
+  background-color: grey;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: grey;
+  font-size: 15px;
+  float: right;
+}
+
+.prevnext {
+  width: 50px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: grey;
+  font-size: 18px;
+  float: right;
+  /* padding-bottom: : 15px; */
+  /* margin-bottom: 15px; */
 }
