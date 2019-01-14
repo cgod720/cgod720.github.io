@@ -34,8 +34,6 @@ h1 {
 footer {
   margin: 0 auto;
   margin-top: 360px;
-  /* position: fixed;
-  bottom: 0px; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -49,7 +47,7 @@ a {
   font-size: 16px;
   padding: 10px;
   font-weight: bold;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 img {
@@ -60,6 +58,11 @@ img {
 
 img:first-of-type {
   display: block;
+}
+
+.images {
+  width: 100%;
+  height: 83%;
 }
 
 .container {
@@ -94,13 +97,15 @@ img:first-of-type {
 
 .modal {
   width: 450px;
-  height: 450px;
+  height: 320px;
   color: rgba(255, 180, 30, 0.5);
   z-index: 1;
   background-color: grey;
   display: none;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .5);
   margin: 0 auto;
+  /* border: 1px solid red;
+  border-radius: 10px; */
 }
 
 .member {

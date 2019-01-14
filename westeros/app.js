@@ -1,15 +1,31 @@
 $(() => {
+  /////////////////////////////////
+  ///        Variables          ///
+  ////////////////////////////////
 
-  $(window).resize(() => {
-    if( $(window).width() <= 900){
-      $('body').css('background', 'black');
-    } else {
-      getTheme($id);
-    }
-  })
+  //Current image index for modal
+  let currentImgIndex = 0
+
+  //Variable for multiple functions to get house id
+  let $id;
+
+// ///////////////////////////////////
+// ///       Event Listeners       ///
+// ///////////////////////////////////
+//
+// //Event listener for window resizing, theme response
+//   $(window).resize(() => {
+//     if( $(window).width() <= 900){
+//       $('body').css('background', 'black');
+//       $('h1').css('color', 'gold');
+//       $('.lord-of').css('color', 'gold').css('background', 'black');
+//     } else {
+//       getTheme($id);
+//     }
+//   })
 
 
-  //Function takes url as a parameter
+  //Function takes url as a parameter, gets member info
   const getswornMembers = (url) => {
     $.ajax(
       {
@@ -28,6 +44,7 @@ $(() => {
       )
   }
 
+  //Gets lord name from url provided
   const getLord = (url) => {
       console.log(url)
       $.ajax(
@@ -103,14 +120,37 @@ $(() => {
           $('a').css('color', 'red');
         } else {
           $('body').css('background', 'black');
+          // $('h1').css('color', 'gold')
+          // $('.lord-of').css('color', 'gold');
+          // $('a').css('color')
         }
     //Martell theme
-  } else if(id == 285){
+    } else if(id == 285){
+      if($(window).width() >= 900){
         $('body').css('background', 'url("https://img2.goodfon.com/wallpaper/nbig/a/18/the-montain-gregor-clegane-vs.jpg")')
+      } else {
+        $('body').css('background', 'black');
+      }
     }
   }
 
-  let $id;
+
+  ///////////////////////////////////
+  ///       Event Listeners       ///
+  ///////////////////////////////////
+
+  //Event listener for window resizing, theme response
+    $(window).resize(() => {
+      if( $(window).width() <= 900){
+        $('body').css('background', 'black');
+        $('h1').css('color', 'gold');
+        $('.lord-of').css('color', 'gold').css('background', 'black');
+        $('a').css('color', 'gold');
+      } else {
+          getTheme($id);
+      }
+    })
+
 
   //Event listener for House buttons
   $('.house').on('click', (event) => {
@@ -123,6 +163,8 @@ $(() => {
 
     //Calls getTheme function and passes in $id as the parameter
     getTheme($id);
+
+    $('footer').css('margin-top', '20px');
 
     $.ajax(
       {
@@ -158,14 +200,11 @@ $(() => {
       $('.modal').hide();
   })
 
-  //Current image index for modal
-  let currentImgIndex = 0
-
   //Event listener for next button on modal
   $('#next').on('click', () => {
       $('#images').children().eq(currentImgIndex).hide();
       currentImgIndex++;
-      if(currentImgIndex > 6){
+      if(currentImgIndex > 3){
         currentImgIndex = 0;
       }
       $('#images').children().eq(currentImgIndex).show();
@@ -177,13 +216,14 @@ $(() => {
       currentImgIndex--;
       console.log(currentImgIndex);
       if(currentImgIndex < 0){
-        currentImgIndex = 6;
+        currentImgIndex = 3;
       }
       $('#images').children().eq(currentImgIndex).show();
   })
 
-  $('button').on('click', () => {
-    $('footer').css('margin-top', '20px');
-  })
+  //Event listener to move <a> links when container is filled
+  // $('button').on('click', () => {
+  //   $('footer').css('margin-top', '20px');
+  // })
 
 })
