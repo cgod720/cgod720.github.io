@@ -33,9 +33,9 @@ h1 {
 
 footer {
   margin: 0 auto;
-  margin-top: 20px;
-  position: fixed;
-  bottom: 0px;
+  margin-top: 360px;
+  /* position: fixed;
+  bottom: 0px; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -55,6 +55,11 @@ a {
 img {
   width: 100%;
   height: 83%;
+  display: none;
+}
+
+img:first-of-type {
+  display: block;
 }
 
 .container {
@@ -94,7 +99,7 @@ img {
   z-index: 1;
   background-color: grey;
   display: none;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .5);
   margin: 0 auto;
 }
 
@@ -130,6 +135,16 @@ img {
   color: grey;
   font-size: 18px;
   float: right;
-  /* padding-bottom: : 15px; */
-  /* margin-bottom: 15px; */
+}
+
+@media (max-width: 900px){
+  body {
+    background: black;
+  }
+  h1 {
+    color: gold;
+  }
+  .lord-of {
+    color: gold;
+  }
 }
