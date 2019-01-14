@@ -104,8 +104,8 @@ img:first-of-type {
   display: none;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .5);
   margin: 0 auto;
-  /* border: 1px solid red;
-  border-radius: 10px; */
+  border: 1px solid red;
+  border-radius: 10px;
 }
 
 .member {

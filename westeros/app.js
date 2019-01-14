@@ -9,21 +9,10 @@ $(() => {
   //Variable for multiple functions to get house id
   let $id;
 
-// ///////////////////////////////////
-// ///       Event Listeners       ///
-// ///////////////////////////////////
-//
-// //Event listener for window resizing, theme response
-//   $(window).resize(() => {
-//     if( $(window).width() <= 900){
-//       $('body').css('background', 'black');
-//       $('h1').css('color', 'gold');
-//       $('.lord-of').css('color', 'gold').css('background', 'black');
-//     } else {
-//       getTheme($id);
-//     }
-//   })
 
+/////////////////////////////////////////////
+///               Functions              ///
+////////////////////////////////////////////
 
   //Function takes url as a parameter, gets member info
   const getswornMembers = (url) => {
@@ -65,52 +54,84 @@ $(() => {
   const getTheme = (id) => {
     //Targaryen theme
     if(id == 378){
-      $('body').css('background', 'url("http://fc05.deviantart.net/fs71/f/2012/350/a/1/targaryen_wallpaper_by_jimiyo-d5o7ymg.jpg")');
-      $('h1').css('color', 'gold');
-      $('.lord-of').css('color', 'gold').css('background-color', '').css('width', '679px').css('margin', '0 auto');
-      $('a').css('color', 'gold')
+      if($(window).width() >= 900){
+        $('body').css('background', 'url("http://fc05.deviantart.net/fs71/f/2012/350/a/1/targaryen_wallpaper_by_jimiyo-d5o7ymg.jpg")');
+        $('h1').css('color', 'gold');
+        $('.lord-of').css('color', 'gold').css('background-color', '').css('width', '679px').css('margin', '0 auto');
+        $('a').css('color', 'gold')
+      } else {
+        defaultTheme();
+      }
     //Baratheon theme
     } else if(id == 16){
-      $('body').css('background', 'url("http://www.jakpost.travel/imgfiles/full/57/571973/house-baratheon-wallpaper.jpg")')
-      $('h1').css('color', 'black');
-      $('.lord-of').css('color', 'gold').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '679px').css('margin', '0 auto');
-      $('a').css('color', 'black');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("http://www.jakpost.travel/imgfiles/full/57/571973/house-baratheon-wallpaper.jpg")')
+          $('h1').css('color', 'black');
+          $('.lord-of').css('color', 'gold').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '679px').css('margin', '0 auto');
+          $('a').css('color', 'black').css('font-weight', 'bold');
+        } else {
+            defaultTheme();
+        }
     //Lannister theme
     } else if(id == 229){
-      $('body').css('background', 'url("https://cdn.wallpapersafari.com/39/91/hODbH3.jpg")');
-      $('h1').css('color', 'black');
-      $('.lord-of').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '579px').css('margin', '0 auto').css('color', 'gold');
-      $('a').css('color', 'black');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://cdn.wallpapersafari.com/39/91/hODbH3.jpg")');
+          $('h1').css('color', 'black');
+          $('.lord-of').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '579px').css('margin', '0 auto').css('color', 'gold');
+          $('a').css('color', 'black');
+        } else {
+            defaultTheme();
+        }
     //Stark theme
     } else if(id == 362){
-        $('body').css('background', 'url("https://www.tomswallpapers.com/pic/201502/1366x768/tomswallpapers.com-3657.jpg")');
-        $('h1').css('color', 'white');
-        $('.lord-of').css('color', 'white').css('background-color', '');
-        $('a').css('color', 'white');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://www.tomswallpapers.com/pic/201502/1366x768/tomswallpapers.com-3657.jpg")');
+          $('h1').css('color', 'white');
+          $('.lord-of').css('color', 'white').css('background-color', '');
+          $('a').css('color', 'white');
+        } else {
+            defaultTheme();
+        }
     //Tyrell theme
     } else if(id == 398) {
-        $('body').css('background', 'url("https://wallpapercave.com/wp/fmamDrr.jpg")');
-        $('h1').css('color', 'gold');
-        $('.lord-of').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '479px').css('margin', '0 auto').css('color', 'gold');
-        $('a').css('color', 'gold');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://wallpapercave.com/wp/fmamDrr.jpg")');
+          $('h1').css('color', 'gold');
+          $('.lord-of').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '479px').css('margin', '0 auto').css('color', 'gold');
+          $('a').css('color', 'gold');
+        } else {
+            defaultTheme();
+        }
     //Greyjoy Theme
     } else if(id == 169){
-        $('body').css('background', 'url("https://www.wallpaperup.com/uploads/wallpapers/2014/03/06/288654/cbaa7cea48e7992dbf670d6e0a09ac48-700.jpg")')
-        $('.lord-of').css('color', 'black').css('font-weight', '900').css('background-color', 'rgba(255, 255, 255, 0.8)').css('width', '480px').css('margin', '0 auto');
-        $('h1').css('color', 'black');
-        $('a').css('color', 'black');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://www.wallpaperup.com/uploads/wallpapers/2014/03/06/288654/cbaa7cea48e7992dbf670d6e0a09ac48-700.jpg")')
+          $('.lord-of').css('color', 'black').css('font-weight', '900').css('background-color', 'rgba(255, 255, 255, 0.8)').css('width', '480px').css('margin', '0 auto');
+          $('h1').css('color', 'black');
+          $('a').css('color', 'black');
+        } else {
+            defaultTheme();
+        }
     //Arryn theme
     } else if(id == 7){
-        $('body').css('background', 'url("https://i.pinimg.com/originals/e6/85/3e/e6853efe758813773f946c7aab29a568.jpg")')
-        $('.lord-of').css('color', 'black').css('font-weight', '900').css('background-color', 'rgba(255, 255, 255, 0.5)').css('width', '480px').css('margin', '0 auto');
-        $('h1').css('color', 'black');
-        $('a').css('color', 'black');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://i.pinimg.com/originals/e6/85/3e/e6853efe758813773f946c7aab29a568.jpg")')
+          $('.lord-of').css('color', 'black').css('font-weight', '900').css('background-color', 'rgba(255, 255, 255, 0.5)').css('width', '480px').css('margin', '0 auto');
+          $('h1').css('color', 'black');
+          $('a').css('color', 'black');
+        } else {
+            defaultTheme();
+        }
     //Tully theme
     } else if(id == 395){
-        $('body').css('background', 'url("https://wallpaperstock.net/wallpapers/thumbs1/30169.jpg")')
-        $('.lord-of').css('color', 'blue').css('font-weight', '900').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '480px').css('margin', '0 auto');
-        $('h1').css('color', 'red');
-        $('a').css('color', 'red');
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://wallpaperstock.net/wallpapers/thumbs1/30169.jpg")')
+          $('.lord-of').css('color', 'blue').css('font-weight', '900').css('background-color', 'rgba(0, 0, 0, 0.8)').css('width', '480px').css('margin', '0 auto');
+          $('h1').css('color', 'red');
+          $('a').css('color', 'red');
+        } else {
+            defaultTheme()
+        }
     //Bolton theme
     } else if(id == 34){
         if($(window).width() >= 900){
@@ -119,19 +140,26 @@ $(() => {
           $('h1').css('color', 'red');
           $('a').css('color', 'red');
         } else {
-          $('body').css('background', 'black');
-          // $('h1').css('color', 'gold')
-          // $('.lord-of').css('color', 'gold');
-          // $('a').css('color')
+            defaultTheme();
         }
     //Martell theme
     } else if(id == 285){
-      if($(window).width() >= 900){
-        $('body').css('background', 'url("https://img2.goodfon.com/wallpaper/nbig/a/18/the-montain-gregor-clegane-vs.jpg")')
-      } else {
-        $('body').css('background', 'black');
-      }
+        if($(window).width() >= 900){
+          $('body').css('background', 'url("https://img2.goodfon.com/wallpaper/nbig/a/18/the-montain-gregor-clegane-vs.jpg")')
+          $('h1').css('color', 'black');
+          $('.lord-of').css('color', 'black').css('background', '');
+          $('a').css('color', 'black').css('font-weight', 'bold');
+        } else {
+            defaultTheme();
+        }
     }
+  }
+
+  const defaultTheme = () => {
+    $('body').css('background', 'black');
+    $('h1').css('color', 'gold')
+    $('.lord-of').css('color', 'gold').css('background', '');
+    $('a').css('color', 'gold')
   }
 
 
@@ -140,13 +168,12 @@ $(() => {
   ///////////////////////////////////
 
   //Event listener for window resizing, theme response
+  //Got help from STACKOVERFLOW
     $(window).resize(() => {
       if( $(window).width() <= 900){
-        $('body').css('background', 'black');
-        $('h1').css('color', 'gold');
-        $('.lord-of').css('color', 'gold').css('background', 'black');
-        $('a').css('color', 'gold');
+        defaultTheme();
       } else {
+          $('body').css('background', 'url("https://www.desktop-background.com/download/1366x768/2014/10/14/839980_game-of-thrones-wallpapers_1920x1080_h.jpg")')
           getTheme($id);
       }
     })
@@ -220,10 +247,5 @@ $(() => {
       }
       $('#images').children().eq(currentImgIndex).show();
   })
-
-  //Event listener to move <a> links when container is filled
-  // $('button').on('click', () => {
-  //   $('footer').css('margin-top', '20px');
-  // })
 
 })
