@@ -14,4 +14,4 @@ JavaScript gave the page functionality, and with the help of JQuery, individual 
 Only real problem is on mobile. Page is responsive in browser resizing but non-responsive in mobile.
 
 ###### Live link
-cgod720.github.io/westeros
+<a href="https://cgod720.github.io/westeros">Westeros</a>
